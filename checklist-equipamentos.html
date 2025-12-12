@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Checklist de Equipamentos por Sala</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+           font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-secondaria) 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        :root{
+            --azul-principal: #194f91;
+            --azul-secondaria: #152663;
+        }
+        .header {
+            background: var(--azul-principal);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .header img{
+            width: 200px;
+            height: 50px;
+            padding-right: 3%;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .content {
+            padding: 40px;
+        }
+        .sala-selector {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--azul-principal);
+        }
+        .sala-selector label {
+            display: block;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        select {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        select:focus {
+            outline: none;
+            border-color: var(--azul-principal);
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+        }
+        .checklist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .checklist-table th {
+            background: linear-gradient(180deg, var(--azul-principal) 0%, var(--azul-secondaria) 100%);
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .checklist-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        .checklist-table tr:hover {
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+        .checklist-table tr:last-child td {
+            border-bottom: none;
+        }
+        .equipamento-nome {
+            font-weight: 600;
+            color: var(--azul-principal);
+            font-size: 1.05em;
+        }
+        .status-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .status-select:focus {
+            outline: none;
+            border-color: var(--azul-principal);
+        }
+        .observacao-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            min-height: 60px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .observacao-input:focus {
+            outline: none;
+            border-color: var(--azul-principal);
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+        }
+        .observacao-obrigatoria {
+            border: 2px solid #d32f2f !important;
+            background-color: #ffebee;
+            animation: shake 0.5s ease-in-out;
+        }
+        .foto-container {
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px dashed #d32f2f;
+            border-radius: 6px;
+            background-color: #ffebee;
+        }
+        .foto-botoes {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .foto-btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .foto-btn.camera {
+            background: #2196f3;
+            color: white;
+        }
+        .foto-btn.arquivo {
+            background: #4caf50;
+            color: white;
+        }
+        .foto-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .foto-item {
+            position: relative;
+            display: inline-block;
+        }
+        .foto-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .foto-remover {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        .hidden {
+            display: none;
+        }
+        .export-btn {
+            background: linear-gradient(180deg, var(--azul-principal) 0%, var(--azul-secondaria) 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
+        }
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 35, 126, 0.4);
+        }
+        .export-btn:active {
+            transform: translateY(0);
+        }
+        .status-ok { color: #2e7d32; font-weight: bold; }
+        .status-problema { color: #d32f2f; font-weight: bold; }
+        .status-ausente { color: #f57c00; font-weight: bold; }
+        
+        select:disabled, textarea:disabled {
+            background-color: #f5f5f5;
+            color: #999;
+            cursor: not-allowed;
+        }
+        
+        .equipamento-nome:contains("Desabilitado") {
+            color: #999;
+        }
+        
+        /* Estilo para área de salas verificadas */
+        #salasVerificadas {
+            border-left: 4px solid var(--azul-principal);
+        }
+        
+        /* RESPONSIVIDADE MOBILE */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                text-align: center;
+            }
+            
+            .header img {
+                width: 150px;
+                height: 38px;
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+                margin-bottom: 5px;
+            }
+            
+            .header p {
+                font-size: 0.9em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .sala-selector {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .sala-selector label {
+                font-size: 1em;
+            }
+            
+            select {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            /* Tabela responsiva - layout em cards */
+            .checklist-table {
+                display: none;
+            }
+            
+            .mobile-cards {
+                display: block;
+            }
+            
+            .equipment-card {
+                background: white;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                padding: 15px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+            
+            .equipment-card h3 {
+                color: var(--azul-principal);
+                font-size: 1.1em;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
+            
+            .card-field {
+                margin-bottom: 12px;
+            }
+            
+            .card-field label {
+                display: block;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 5px;
+                font-size: 0.9em;
+            }
+            
+            .status-select {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            .observacao-input {
+                padding: 12px;
+                font-size: 16px;
+                min-height: 80px;
+            }
+            
+            .export-btn {
+                width: 100%;
+                padding: 18px;
+                font-size: 16px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            
+            /* Botões em coluna no mobile */
+            .export-btn:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.3em;
+            }
+            
+            .content {
+                padding: 15px 10px;
+            }
+            
+            .equipment-card {
+                padding: 12px;
+            }
+            
+            .equipment-card h3 {
+                font-size: 1em;
+            }
+        }
+        
+        /* Layout desktop - esconder cards mobile */
+        @media (min-width: 769px) {
+            .mobile-cards {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="cbm.png" alt="">
+        <div>
+            <h1>Checklist de Equipamentos</h1>
+            <p>Sistema de Verificação por Sala</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+        
+        <div class="sala-selector">
+            <label><strong>É dia de verificar as tomadas?</strong></label>
+            <div style="margin: 15px 0;">
+                <label style="display: inline-block; margin-right: 20px;">
+                    <input type="radio" name="diaTomada" value="sim" onchange="configurarTipoVerificacao()"> Sim
+                </label>
+                <label style="display: inline-block;">
+                    <input type="radio" name="diaTomada" value="nao" onchange="configurarTipoVerificacao()"> Não
+                </label>
+            </div>
+        </div>
+        
+        <div class="sala-selector">
+            <label for="salaSelect"><strong>Selecione a Sala:</strong></label>
+            <select id="salaSelect" onchange="mostrarEquipamentos()">
+                <option value="">-- Selecione uma sala --</option>
+            </select>
+        </div>
+
+        <div id="checklistContainer" class="hidden">
+            <!-- Layout Desktop - Tabela -->
+            <table class="checklist-table" id="checklistTable">
+                <thead>
+                    <tr>
+                        <th>Equipamento</th>
+                        <th>Status</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody id="checklistBody">
+                </tbody>
+            </table>
+            
+            <!-- Layout Mobile - Cards -->
+            <div class="mobile-cards" id="mobileCards">
+            </div>
+            
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+                <button class="export-btn" onclick="salvarSalaAtual()" style="flex: 1; min-width: 200px;">💾 Salvar Sala Atual</button>
+                <button class="export-btn" onclick="excluirSala()" style="flex: 1; min-width: 200px; background: linear-gradient(180deg, #d32f2f 0%, #b71c1c 100%);">🗑️ Excluir Sala</button>
+                <button class="export-btn" onclick="exportarTudo()" style="flex: 1; min-width: 200px; background: linear-gradient(180deg, #2e7d32 0%, #1b5e20 100%);">📋 Exportar Todas as Salas</button>
+            </div>
+            <div id="salasVerificadas" style="margin-top: 15px; padding: 10px; background: #f0f8ff; border-radius: 5px; font-size: 0.9em;"></div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // Armazenar dados de todas as salas verificadas
+        let dadosAcumulados = {};
+        
+        // Armazenar fotos por equipamento
+        let fotosEquipamentos = {};
+        
+        // Mapeamento de equipamentos por sala
+        const equipamentosPorSala = {
+            'Tomada': ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6', 'Sala 7', 'Sala 8', 'Sala 9', 'Sala 10', 'Sala 11', 'Sala 12', 'Sala 13', 'Sala 14', 'Sala 16', 'Sala 17', 'Sala 18', 'Sala 19', 'Diretoria'],
+            'Cabo de Rede': ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6', 'Sala 7', 'Sala 8', 'Sala 9', 'Sala 10', 'Sala 11', 'Sala 12', 'Sala 13', 'Sala 14', 'Sala 16', 'Sala 17', 'Sala 18', 'Sala 19', 'Diretoria'],
+            'Mini PC': ['Sala 8', 'Sala exp 1', 'Sala exp 2', 'Diretoria'],
+            'TV': ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6', 'Sala 7', 'Sala 11', 'Sala 12', 'Sala 13', 'Sala 14', 'Sala 16', 'Sala 17', 'Sala 18', 'Sala 19'],
+            'Mouse e Teclado': ['Sala 8', 'Sala exp 1', 'Sala exp 2', 'Diretoria'],
+            'Ar Condicionado': ['Sala exp 1', 'Sala exp 2'],
+            'Automação': ['Sala exp 1', 'Sala exp 2'],
+            'Cortinas': ['Sala exp 1', 'Sala exp 2'],
+            'Câmera': ['Sala 1', 'Sala 2', 'Sala 3', 'Sala 4', 'Sala 5', 'Sala 6', 'Sala 7', 'Sala 17', 'Sala 18', 'Sala 19'],
+            'Videoconferência': ['Sala 8', 'Diretoria']
+        };
+
+        // Configurar tipo de verificação
+        let tipoVerificacao = null;
+        
+        function configurarTipoVerificacao() {
+            const diaTomada = document.querySelector('input[name="diaTomada"]:checked')?.value;
+            tipoVerificacao = diaTomada;
+            
+            // Limpar seleção de sala quando mudar o tipo
+            document.getElementById('salaSelect').value = '';
+            document.getElementById('checklistContainer').classList.add('hidden');
+        }
+        
+        // Obter todas as salas únicas e ordenar
+        function obterSalasOrdenadas() {
+            const salas = [...new Set(Object.values(equipamentosPorSala).flat())];
+            
+            // Separar salas especiais
+            const diretoria = salas.filter(s => s === 'Diretoria');
+            const salaExp1 = salas.filter(s => s === 'Sala exp 1');
+            const salaExp2 = salas.filter(s => s === 'Sala exp 2');
+            const salasNumericas = salas.filter(s => s.startsWith('Sala ') && !s.includes('exp'));
+            
+            // Ordenar salas numéricas
+            salasNumericas.sort((a, b) => {
+                const numA = parseInt(a.replace('Sala ', ''));
+                const numB = parseInt(b.replace('Sala ', ''));
+                return numA - numB;
+            });
+            
+            // Retornar ordem: Diretoria, Sala exp 1, Sala exp 2, depois salas numéricas
+            return [...diretoria, ...salaExp1, ...salaExp2, ...salasNumericas];
+        }
+
+        // Preencher o select com as salas
+        function preencherSelectSalas() {
+            const select = document.getElementById('salaSelect');
+            const salasOrdenadas = obterSalasOrdenadas();
+            
+            salasOrdenadas.forEach(sala => {
+                const option = document.createElement('option');
+                option.value = sala;
+                option.textContent = sala;
+                select.appendChild(option);
+            });
+        }
+
+        // Mostrar equipamentos da sala selecionada
+        function mostrarEquipamentos() {
+            const salaSelecionada = document.getElementById('salaSelect').value;
+            const container = document.getElementById('checklistContainer');
+            const tbody = document.getElementById('checklistBody');
+            const mobileCards = document.getElementById('mobileCards');
+
+            if (!salaSelecionada) {
+                container.classList.add('hidden');
+                return;
+            }
+            
+            if (!tipoVerificacao) {
+                alert('Por favor, selecione se é dia de verificar as tomadas primeiro!');
+                document.getElementById('salaSelect').value = '';
+                return;
+            }
+
+            // Limpar conteúdo
+            tbody.innerHTML = '';
+            mobileCards.innerHTML = '';
+
+            // Encontrar equipamentos da sala
+            const equipamentosDaSala = [];
+            for (const [equipamento, salas] of Object.entries(equipamentosPorSala)) {
+                if (salas.includes(salaSelecionada)) {
+                    // Aplicar regras baseadas no tipo de verificação
+                    if (tipoVerificacao === 'sim') {
+                        // Dia de tomada: não mostrar cabo de rede
+                        if (equipamento !== 'Cabo de Rede') {
+                            equipamentosDaSala.push(equipamento);
+                        }
+                    } else {
+                        // Não é dia de tomada: mostrar todos exceto tomada (desabilitada)
+                        equipamentosDaSala.push(equipamento);
+                    }
+                }
+            }
+
+            // Criar linhas da tabela (desktop)
+            equipamentosDaSala.forEach(equipamento => {
+                const isDisabled = (tipoVerificacao === 'nao' && equipamento === 'Tomada');
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><div class="equipamento-nome">${equipamento}${isDisabled ? ' (Desabilitado)' : ''}</div></td>
+                    <td>
+                        <select class="status-select" data-equipamento="${equipamento}" onchange="verificarObrigatoriedade(this)" ${isDisabled ? 'disabled' : ''}>
+                            <option value="">-- Selecionar --</option>
+                            <option value="OK" class="status-ok">✓ OK</option>
+                            <option value="Problema" class="status-problema">✗ Problema</option>
+                            <option value="Ausente" class="status-ausente">⚠ Ausente</option>
+                        </select>
+                    </td>
+                    <td>
+                        <textarea class="observacao-input" 
+                                  data-equipamento="${equipamento}" 
+                                  placeholder="Digite observações sobre ${equipamento}..."
+                                  oninput="validarObservacao(this)" ${isDisabled ? 'disabled' : ''}></textarea>
+                        <div class="foto-container hidden" id="fotoContainer-${equipamento}">
+                            <div class="foto-botoes">
+                                <button class="foto-btn camera" onclick="tirarFoto('${equipamento}')">📷 Tirar Foto</button>
+                                <button class="foto-btn arquivo" onclick="selecionarArquivo('${equipamento}')">📁 Anexar</button>
+                            </div>
+                            <input type="file" id="fileInput-${equipamento}" accept="image/*" style="display: none" onchange="processarArquivo(this, '${equipamento}')">
+                            <div class="foto-preview" id="fotoPreview-${equipamento}"></div>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Criar cards para mobile
+            equipamentosDaSala.forEach(equipamento => {
+                const isDisabled = (tipoVerificacao === 'nao' && equipamento === 'Tomada');
+                const card = document.createElement('div');
+                card.className = 'equipment-card';
+                card.innerHTML = `
+                    <h3>${equipamento}${isDisabled ? ' (Desabilitado)' : ''}</h3>
+                    <div class="card-field">
+                        <label>Status:</label>
+                        <select class="status-select" data-equipamento="${equipamento}" onchange="verificarObrigatoriedade(this)" ${isDisabled ? 'disabled' : ''}>
+                            <option value="">-- Selecionar --</option>
+                            <option value="OK" class="status-ok">✓ OK</option>
+                            <option value="Problema" class="status-problema">✗ Problema</option>
+                            <option value="Ausente" class="status-ausente">⚠ Ausente</option>
+                        </select>
+                    </div>
+                    <div class="card-field">
+                        <label>Observações:</label>
+                        <textarea class="observacao-input" 
+                                  data-equipamento="${equipamento}" 
+                                  placeholder="Digite observações sobre ${equipamento}..."
+                                  oninput="validarObservacao(this)" ${isDisabled ? 'disabled' : ''}></textarea>
+                        <div class="foto-container hidden" id="fotoContainer-mobile-${equipamento}">
+                            <div class="foto-botoes">
+                                <button class="foto-btn camera" onclick="tirarFoto('${equipamento}')">📷 Tirar Foto</button>
+                                <button class="foto-btn arquivo" onclick="selecionarArquivo('${equipamento}')">📁 Anexar</button>
+                            </div>
+                            <input type="file" id="fileInput-mobile-${equipamento}" accept="image/*" style="display: none" onchange="processarArquivo(this, '${equipamento}')">
+                            <div class="foto-preview" id="fotoPreview-mobile-${equipamento}"></div>
+                        </div>
+                    </div>
+                `;
+                mobileCards.appendChild(card);
+            });
+
+            container.classList.remove('hidden');
+            
+            // Carregar fotos existentes para equipamentos com problema
+            equipamentosDaSala.forEach(equipamento => {
+                const chave = `${salaSelecionada}-${equipamento}`;
+                if (fotosEquipamentos[chave]) {
+                    atualizarPreviewFotos(equipamento);
+                }
+            });
+        }
+
+        // Verificar se observação é obrigatória
+        function verificarObrigatoriedade(selectElement) {
+            const equipamento = selectElement.dataset.equipamento;
+            const observacaoInputs = document.querySelectorAll(`textarea[data-equipamento="${equipamento}"]`);
+            const fotoContainers = document.querySelectorAll(`[id*="fotoContainer"][id*="${equipamento}"]`);
+            
+            observacaoInputs.forEach(observacaoInput => {
+                if (selectElement.value === 'Problema') {
+                    observacaoInput.classList.add('observacao-obrigatoria');
+                    observacaoInput.placeholder = 'OBRIGATÓRIO: Descreva o problema encontrado...';
+                    observacaoInput.required = true;
+                } else {
+                    observacaoInput.classList.remove('observacao-obrigatoria');
+                    observacaoInput.placeholder = `Digite observações sobre ${equipamento}...`;
+                    observacaoInput.required = false;
+                }
+            });
+            
+            // Mostrar/ocultar container de fotos
+            fotoContainers.forEach(container => {
+                if (selectElement.value === 'Problema') {
+                    container.classList.remove('hidden');
+                } else {
+                    container.classList.add('hidden');
+                    // Limpar fotos quando não é mais problema
+                    const salaSelecionada = document.getElementById('salaSelect').value;
+                    const chave = `${salaSelecionada}-${equipamento}`;
+                    delete fotosEquipamentos[chave];
+                    const previews = container.querySelectorAll('.foto-preview');
+                    previews.forEach(preview => preview.innerHTML = '');
+                }
+            });
+            
+            // Sincronizar selects do mesmo equipamento
+            const outrosSelects = document.querySelectorAll(`select[data-equipamento="${equipamento}"]`);
+            outrosSelects.forEach(select => {
+                if (select !== selectElement) {
+                    select.value = selectElement.value;
+                }
+            });
+        }
+        
+        // Tirar foto com câmera
+        function tirarFoto(equipamento) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.capture = 'camera';
+            input.onchange = (e) => processarArquivo(e.target, equipamento);
+            input.click();
+        }
+        
+        // Selecionar arquivo
+        function selecionarArquivo(equipamento) {
+            const inputs = document.querySelectorAll(`[id*="fileInput"][id*="${equipamento}"]`);
+            if (inputs.length > 0) {
+                inputs[0].click();
+            }
+        }
+        
+        // Processar arquivo de imagem
+        function processarArquivo(input, equipamento) {
+            const file = input.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const salaSelecionada = document.getElementById('salaSelect').value;
+                const chave = `${salaSelecionada}-${equipamento}`;
+                
+                if (!fotosEquipamentos[chave]) {
+                    fotosEquipamentos[chave] = [];
+                }
+                
+                const fotoData = {
+                    nome: file.name,
+                    data: e.target.result,
+                    timestamp: new Date().toLocaleString('pt-BR')
+                };
+                
+                fotosEquipamentos[chave].push(fotoData);
+                atualizarPreviewFotos(equipamento);
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        // Atualizar preview das fotos
+        function atualizarPreviewFotos(equipamento) {
+            const salaSelecionada = document.getElementById('salaSelect').value;
+            const chave = `${salaSelecionada}-${equipamento}`;
+            const fotos = fotosEquipamentos[chave] || [];
+            
+            const previews = document.querySelectorAll(`[id*="fotoPreview"][id*="${equipamento}"]`);
+            
+            previews.forEach(preview => {
+                preview.innerHTML = '';
+                fotos.forEach((foto, index) => {
+                    const fotoItem = document.createElement('div');
+                    fotoItem.className = 'foto-item';
+                    fotoItem.innerHTML = `
+                        <img src="${foto.data}" alt="${foto.nome}" title="${foto.nome} - ${foto.timestamp}">
+                        <button class="foto-remover" onclick="removerFoto('${equipamento}', ${index})" title="Remover foto">×</button>
+                    `;
+                    preview.appendChild(fotoItem);
+                });
+            });
+        }
+        
+        // Remover foto
+        function removerFoto(equipamento, index) {
+            const salaSelecionada = document.getElementById('salaSelect').value;
+            const chave = `${salaSelecionada}-${equipamento}`;
+            
+            if (fotosEquipamentos[chave]) {
+                fotosEquipamentos[chave].splice(index, 1);
+                if (fotosEquipamentos[chave].length === 0) {
+                    delete fotosEquipamentos[chave];
+                }
+                atualizarPreviewFotos(equipamento);
+            }
+        }
+
+        // Validar observação obrigatória
+        function validarObservacao(textareaElement) {
+            const equipamento = textareaElement.dataset.equipamento;
+            const statusSelects = document.querySelectorAll(`select[data-equipamento="${equipamento}"]`);
+            const outrasTextareas = document.querySelectorAll(`textarea[data-equipamento="${equipamento}"]`);
+            
+            // Sincronizar textareas
+            outrasTextareas.forEach(textarea => {
+                if (textarea !== textareaElement) {
+                    textarea.value = textareaElement.value;
+                }
+            });
+            
+            statusSelects.forEach(statusSelect => {
+                if (statusSelect.value === 'Problema' && textareaElement.value.trim() === '') {
+                    outrasTextareas.forEach(textarea => {
+                        textarea.classList.add('observacao-obrigatoria');
+                    });
+                } else {
+                    outrasTextareas.forEach(textarea => {
+                        textarea.classList.remove('observacao-obrigatoria');
+                    });
+                }
+            });
+        }
+
+        // Salvar dados da sala atual
+        function salvarSalaAtual() {
+            const salaSelecionada = document.getElementById('salaSelect').value;
+            if (!salaSelecionada) {
+                alert('Selecione uma sala primeiro!');
+                return;
+            }
+
+            // Validar se pelo menos um status foi selecionado
+            const todosSelects = document.querySelectorAll('#checklistTable .status-select, #mobileCards .status-select');
+            const equipamentosProcessados = new Set();
+            let statusSelecionados = 0;
+            let camposInvalidos = [];
+            
+            todosSelects.forEach(select => {
+                const equipamento = select.dataset.equipamento;
+                if (equipamentosProcessados.has(equipamento)) return;
+                equipamentosProcessados.add(equipamento);
+                
+                // Ignorar campos desabilitados
+                if (select.disabled) {
+                    return;
+                }
+                
+                if (select.value && select.value !== '') {
+                    statusSelecionados++;
+                    
+                    // Validar observação obrigatória para problemas
+                    if (select.value === 'Problema') {
+                        const observacao = document.querySelector(`textarea[data-equipamento="${equipamento}"]`);
+                        if (!observacao.value.trim()) {
+                            camposInvalidos.push(equipamento);
+                            observacao.classList.add('observacao-obrigatoria');
+                        }
+                    }
+                } else {
+                    camposInvalidos.push(`${equipamento} (status não selecionado)`);
+                }
+            });
+            
+            if (statusSelecionados === 0) {
+                alert('❌ Nenhum equipamento foi verificado!\n\nSelecione o status de pelo menos um equipamento antes de salvar.');
+                return;
+            }
+            
+            if (camposInvalidos.length > 0) {
+                alert(`❌ Campos obrigatórios não preenchidos:\n\n- ${camposInvalidos.join('\n- ')}`);
+                return;
+            }
+
+            // Coletar dados da sala
+            const dadosSala = {
+                sala: salaSelecionada,
+                data: new Date().toLocaleDateString('pt-BR'),
+                hora: new Date().toLocaleTimeString('pt-BR'),
+                equipamentos: {}
+            };
+
+            const equipamentosUnicos = new Set();
+            const statusSelects = document.querySelectorAll('.status-select');
+            
+            statusSelects.forEach(select => {
+                const equipamento = select.dataset.equipamento;
+                if (equipamentosUnicos.has(equipamento)) return;
+                equipamentosUnicos.add(equipamento);
+                
+                // Ignorar equipamentos desabilitados
+                if (select.disabled) {
+                    dadosSala.equipamentos[equipamento] = {
+                        status: 'NÃO VERIFICADO HOJE',
+                        observacao: 'Equipamento não verificado neste dia'
+                    };
+                    return;
+                }
+                
+                const status = select.value || 'NÃO VERIFICADO';
+                const observacao = document.querySelector(`textarea[data-equipamento="${equipamento}"]`).value || 'Nenhuma observação';
+
+                const chave = `${salaSelecionada}-${equipamento}`;
+                const fotos = fotosEquipamentos[chave] || [];
+                
+                dadosSala.equipamentos[equipamento] = {
+                    status: status,
+                    observacao: observacao,
+                    fotos: fotos.length
+                };
+            });
+
+            // Verificar se sala já foi salva
+            const jaSalva = dadosAcumulados.hasOwnProperty(salaSelecionada);
+            
+            // Salvar no acumulador
+            dadosAcumulados[salaSelecionada] = dadosSala;
+            
+            // Atualizar display
+            atualizarDisplaySalas();
+            
+            if (jaSalva) {
+                alert(`🔄 Sala "${salaSelecionada}" atualizada com sucesso!\n\nTotal de salas verificadas: ${Object.keys(dadosAcumulados).length}`);
+            } else {
+                alert(`✅ Sala "${salaSelecionada}" salva com sucesso!\n\nTotal de salas verificadas: ${Object.keys(dadosAcumulados).length}`);
+            }
+        }
+
+        // Atualizar display de salas verificadas
+        function atualizarDisplaySalas() {
+            const display = document.getElementById('salasVerificadas');
+            const totalSalas = Object.keys(dadosAcumulados).length;
+            const todasSalas = obterSalasOrdenadas();
+            const salasNaoVerificadas = todasSalas.length - totalSalas;
+            
+            if (totalSalas === 0) {
+                display.innerHTML = `📋 Nenhuma sala verificada ainda<br>❌ <strong>${salasNaoVerificadas} salas não verificadas</strong>`;
+            } else {
+                const salasOrdenadas = obterSalasOrdenadas().filter(sala => dadosAcumulados.hasOwnProperty(sala));
+                const listaSalas = salasOrdenadas.join(', ');
+                display.innerHTML = `✅ <strong>${totalSalas} sala(s) verificada(s):</strong> ${listaSalas}<br>❌ <strong>${salasNaoVerificadas} salas não verificadas</strong>`;
+            }
+        }
+
+        // Excluir sala selecionada
+        function excluirSala() {
+            const salasPreenchidas = Object.keys(dadosAcumulados);
+            
+            if (salasPreenchidas.length === 0) {
+                alert('❌ Nenhuma sala foi preenchida ainda!\n\nApenas salas já salvas podem ser excluídas.');
+                return;
+            }
+            
+            // Ordenar salas para exibição
+            const salasOrdenadas = obterSalasOrdenadas().filter(sala => dadosAcumulados.hasOwnProperty(sala));
+            
+            // Criar lista de opções
+            let opcoes = 'Selecione a sala para excluir:\n\n';
+            salasOrdenadas.forEach((sala, index) => {
+                opcoes += `${index + 1}. ${sala}\n`;
+            });
+            
+            const escolha = prompt(opcoes + '\nDigite o número da sala:');
+            
+            if (escolha === null) return; // Cancelou
+            
+            const indice = parseInt(escolha) - 1;
+            
+            if (isNaN(indice) || indice < 0 || indice >= salasOrdenadas.length) {
+                alert('❌ Número inválido!');
+                return;
+            }
+            
+            const salaParaExcluir = salasOrdenadas[indice];
+            
+            // Confirmar exclusão
+            const confirmacao = confirm(`⚠️ ATENÇÃO!\n\nDeseja realmente excluir os dados da sala "${salaParaExcluir}"?\n\nEsta ação não pode ser desfeita!`);
+            
+            if (confirmacao) {
+                // Limpar fotos da sala excluída
+                Object.keys(fotosEquipamentos).forEach(chave => {
+                    if (chave.startsWith(salaParaExcluir + '-')) {
+                        delete fotosEquipamentos[chave];
+                    }
+                });
+                
+                // Remover do acumulador
+                delete dadosAcumulados[salaParaExcluir];
+                
+                // Se a sala excluída era a atual, limpar formulário
+                if (document.getElementById('salaSelect').value === salaParaExcluir) {
+                    document.getElementById('salaSelect').value = '';
+                    document.getElementById('checklistContainer').classList.add('hidden');
+                }
+                
+                // Atualizar display
+                atualizarDisplaySalas();
+                
+                alert(`✅ Sala "${salaParaExcluir}" excluída com sucesso!\n\nTotal de salas verificadas: ${Object.keys(dadosAcumulados).length}`);
+            }
+        }
+
+        // Exportar todas as salas verificadas
+        function exportarTudo() {
+            if (Object.keys(dadosAcumulados).length === 0) {
+                alert('❌ Nenhuma sala foi verificada ainda!\n\nPrimeiro verifique as salas e clique em "Salvar Sala Atual".');
+                return;
+            }
+
+            const todasSalas = obterSalasOrdenadas();
+            const salasVerificadas = todasSalas.filter(sala => dadosAcumulados.hasOwnProperty(sala));
+            const salasNaoVerificadas = todasSalas.filter(sala => !dadosAcumulados.hasOwnProperty(sala));
+            
+            let resultado = `CHECKLIST COMPLETO DE EQUIPAMENTOS\n`;
+            resultado += `Data: ${new Date().toLocaleDateString('pt-BR')}\n`;
+            resultado += `Hora: ${new Date().toLocaleTimeString('pt-BR')}\n`;
+            resultado += `Total de salas verificadas: ${salasVerificadas.length}\n`;
+            resultado += `Total de salas n\u00e3o verificadas: ${salasNaoVerificadas.length}\n`;
+            if (salasNaoVerificadas.length > 0) {
+                resultado += `Salas n\u00e3o verificadas: ${salasNaoVerificadas.join(', ')}\n`;
+            }
+            resultado += `${'='.repeat(50)}\n\n`;
+
+            // Processar cada sala verificada na ordem correta
+            salasVerificadas.forEach(nomeSala => {
+                const dadosSala = dadosAcumulados[nomeSala];
+                resultado += `🏢 ${nomeSala.toUpperCase()}\n`;
+                resultado += `Verificado em: ${dadosSala.data} às ${dadosSala.hora}\n`;
+                resultado += `${'-'.repeat(30)}\n`;
+
+                Object.keys(dadosSala.equipamentos).forEach(equipamento => {
+                    const dados = dadosSala.equipamentos[equipamento];
+                    resultado += `${equipamento.toUpperCase()}:\n`;
+                    resultado += `  Status: ${dados.status}\n`;
+                    resultado += `  Observações: ${dados.observacao}\n`;
+                    if (dados.fotos && dados.fotos > 0) {
+                        resultado += `  Fotos anexadas: ${dados.fotos}\n`;
+                    }
+                    resultado += `\n`;
+                });
+
+                resultado += `\n`;
+            });
+
+            // Gerar relatório HTML com fotos
+            let html = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Checklist - ${new Date().toLocaleDateString('pt-BR')}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .header { background: #194f91; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .sala { border: 1px solid #ddd; margin: 20px 0; border-radius: 8px; overflow: hidden; }
+        .sala-header { background: #f5f5f5; padding: 15px; font-weight: bold; }
+        .equipamento { padding: 15px; border-bottom: 1px solid #eee; }
+        .equipamento:last-child { border-bottom: none; }
+        .status-ok { color: #2e7d32; font-weight: bold; }
+        .status-problema { color: #d32f2f; font-weight: bold; }
+        .status-ausente { color: #f57c00; font-weight: bold; }
+        .fotos { margin-top: 10px; }
+        .foto { display: inline-block; margin: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        .foto img { width: 200px; height: 200px; object-fit: cover; display: block; cursor: pointer; }
+        .foto-info { padding: 5px; font-size: 12px; background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 Relatório Checklist de Equipamentos</h1>
+        <p>Data: ${new Date().toLocaleDateString('pt-BR')} - Hora: ${new Date().toLocaleTimeString('pt-BR')}</p>
+        <p>Salas verificadas: ${salasVerificadas.length} | Não verificadas: ${salasNaoVerificadas.length}</p>`;
+            
+            if (salasNaoVerificadas.length > 0) {
+                html += `<p><strong>Salas não verificadas:</strong> ${salasNaoVerificadas.join(', ')}</p>`;
+            }
+            
+            html += `</div>`;
+
+            // Processar cada sala verificada
+            salasVerificadas.forEach(nomeSala => {
+                const dadosSala = dadosAcumulados[nomeSala];
+                html += `<div class="sala">
+                    <div class="sala-header">🏢 ${nomeSala.toUpperCase()}
+                        <span style="float: right; font-weight: normal;">Verificado em: ${dadosSala.data} às ${dadosSala.hora}</span>
+                    </div>`;
+
+                Object.keys(dadosSala.equipamentos).forEach(equipamento => {
+                    const dados = dadosSala.equipamentos[equipamento];
+                    let statusClass = '';
+                    if (dados.status === 'OK') statusClass = 'status-ok';
+                    else if (dados.status === 'Problema') statusClass = 'status-problema';
+                    else if (dados.status === 'Ausente') statusClass = 'status-ausente';
+                    
+                    html += `<div class="equipamento">
+                        <h3>${equipamento}</h3>
+                        <p><strong>Status:</strong> <span class="${statusClass}">${dados.status}</span></p>
+                        <p><strong>Observações:</strong> ${dados.observacao}</p>`;
+                    
+                    // Adicionar fotos se existirem
+                    const chave = `${nomeSala}-${equipamento}`;
+                    const fotos = fotosEquipamentos[chave] || [];
+                    if (fotos.length > 0) {
+                        html += `<div class="fotos"><strong>Fotos (${fotos.length}):</strong><br>`;
+                        fotos.forEach((foto, index) => {
+                            html += `<div class="foto">
+                                <img src="${foto.data}" alt="${foto.nome}" onclick="window.open(this.src)">
+                                <div class="foto-info">${foto.nome}<br>${foto.timestamp}</div>
+                            </div>`;
+                        });
+                        html += `</div>`;
+                    }
+                    
+                    html += `</div>`;
+                });
+
+                html += `</div>`;
+            });
+
+            html += `</body></html>`;
+
+            // Criar e baixar arquivo HTML
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `checklist_completo_${new Date().toISOString().split('T')[0]}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            alert(`✅ Relatório HTML exportado com fotos!\n\n${Object.keys(dadosAcumulados).length} salas incluídas.\n\nAbra o arquivo .html no navegador para visualizar as fotos.`);
+        }
+
+        // Inicializar aplicação
+        document.addEventListener('DOMContentLoaded', function() {
+            preencherSelectSalas();
+            atualizarDisplaySalas();
+        });
+    </script>
+</body>
+</html>
