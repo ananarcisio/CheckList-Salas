@@ -1,0 +1,284 @@
+CHECKLIST COMPLETO DE EQUIPAMENTOS
+Data: 05/12/2025
+Hora: 08:43:47
+Total de salas verificadas: 17
+Total de salas não verificadas: 4
+Salas não verificadas: Sala 2, Sala 7, Sala 9, Sala 10
+==================================================
+
+🏢 DIRETORIA
+Verificado em: 05/12/2025 às 08:16:41
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+VIDEOCONFERÊNCIA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA EXP 1
+Verificado em: 05/12/2025 às 08:22:47
+------------------------------
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AR CONDICIONADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AUTOMAÇÃO:
+  Status: OK
+  Observações: Nenhuma observação
+
+CORTINAS:
+  Status: Ausente
+  Observações: Nenhuma observação
+
+
+🏢 SALA EXP 2
+Verificado em: 05/12/2025 às 08:26:55
+------------------------------
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AR CONDICIONADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AUTOMAÇÃO:
+  Status: Problema
+  Observações: A tv não projetou a imagem do notebook 
+
+CORTINAS:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 1
+Verificado em: 05/12/2025 às 08:17:50
+------------------------------
+TOMADA:
+  Status: Problema
+  Observações: Das 6 tomadas, 2 estão para fora
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 3
+Verificado em: 05/12/2025 às 08:33:59
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 4
+Verificado em: 05/12/2025 às 08:34:09
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 5
+Verificado em: 05/12/2025 às 08:34:29
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: Problema
+  Observações: As pilhas do controle tem ficado soltas
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 6
+Verificado em: 05/12/2025 às 08:34:38
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 8
+Verificado em: 05/12/2025 às 08:36:51
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+VIDEOCONFERÊNCIA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 11
+Verificado em: 05/12/2025 às 08:17:10
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 12
+Verificado em: 05/12/2025 às 08:17:01
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 13
+Verificado em: 05/12/2025 às 08:16:53
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 14
+Verificado em: 05/12/2025 às 08:38:34
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 16
+Verificado em: 05/12/2025 às 08:41:15
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 17
+Verificado em: 05/12/2025 às 08:41:24
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 18
+Verificado em: 05/12/2025 às 08:43:25
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 19
+Verificado em: 05/12/2025 às 08:43:43
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+

@@ -1,0 +1,344 @@
+CHECKLIST COMPLETO DE EQUIPAMENTOS
+Data: 29/09/2025
+Hora: 08:45:00
+Total de salas verificadas: 17
+Total de salas não verificadas: 5
+Salas não verificadas: Sala exp 1, Sala 2, Sala 9, Sala 10, Sala 15
+==================================================
+
+🏢 DIRETORIA
+Verificado em: 29/09/2025 às 08:08:34
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: Problema
+  Observações: De seis entradas somente três funcionam
+
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+VIDEOCONFERÊNCIA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA EXP 2
+Verificado em: 29/09/2025 às 08:39:08
+------------------------------
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AR CONDICIONADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AUTOMAÇÃO:
+  Status: OK
+  Observações: Nenhuma observação
+
+CORTINAS:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 1
+Verificado em: 29/09/2025 às 08:15:56
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 3
+Verificado em: 29/09/2025 às 08:17:03
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 4
+Verificado em: 29/09/2025 às 08:18:25
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 5
+Verificado em: 29/09/2025 às 08:20:19
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 6
+Verificado em: 29/09/2025 às 08:24:02
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 7
+Verificado em: 29/09/2025 às 08:24:22
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: Problema
+  Observações: Trocar a pilha do controle
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 8
+Verificado em: 29/09/2025 às 08:26:51
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+VIDEOCONFERÊNCIA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 11
+Verificado em: 29/09/2025 às 08:13:21
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 12
+Verificado em: 29/09/2025 às 08:13:03
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 13
+Verificado em: 29/09/2025 às 08:12:54
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 14
+Verificado em: 29/09/2025 às 08:31:01
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 16
+Verificado em: 29/09/2025 às 08:31:16
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 17
+Verificado em: 29/09/2025 às 08:31:28
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 18
+Verificado em: 29/09/2025 às 08:33:51
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 19
+Verificado em: 29/09/2025 às 08:32:43
+------------------------------
+TOMADA:
+  Status: NÃO VERIFICADO HOJE
+  Observações: Equipamento não verificado neste dia
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+

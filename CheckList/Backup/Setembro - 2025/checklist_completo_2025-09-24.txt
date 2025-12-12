@@ -1,0 +1,286 @@
+CHECKLIST COMPLETO DE EQUIPAMENTOS
+Data: 24/09/2025
+Hora: 08:41:56
+Total de salas verificadas: 14
+==================================================
+
+🏢 DIRETORIA
+Verificado em: 24/09/2025 às 08:09:17
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: Problema
+  Observações: De 6 entradas somente duas funcionam corretamente 
+
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+VIDEOCONFERÊNCIA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA EXP 1/2
+Verificado em: 24/09/2025 às 08:41:26
+------------------------------
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AR CONDICIONADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+AUTOMAÇÃO:
+  Status: OK
+  Observações: Nenhuma observação
+
+CORTINAS:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 3
+Verificado em: 24/09/2025 às 08:14:59
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 4
+Verificado em: 24/09/2025 às 08:16:58
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: Ausente
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 5
+Verificado em: 24/09/2025 às 08:19:30
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: Problema
+  Observações: Trocar o controle da TV, não consegue ligar a TV, somente desligar
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 6
+Verificado em: 24/09/2025 às 08:21:37
+------------------------------
+TOMADA:
+  Status: Problema
+  Observações: O encaixe está solto onde pluga o “carregador”
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: Problema
+  Observações: O controle não funciona
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 8
+Verificado em: 24/09/2025 às 08:25:25
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+MINI PC:
+  Status: OK
+  Observações: Nenhuma observação
+
+MOUSE E TECLADO:
+  Status: OK
+  Observações: Nenhuma observação
+
+VIDEOCONFERÊNCIA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 11
+Verificado em: 24/09/2025 às 08:12:48
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 12
+Verificado em: 24/09/2025 às 08:11:56
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 13
+Verificado em: 24/09/2025 às 08:10:58
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 16
+Verificado em: 24/09/2025 às 08:28:25
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 17
+Verificado em: 24/09/2025 às 08:30:31
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 18
+Verificado em: 24/09/2025 às 08:34:25
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
+🏢 SALA 19
+Verificado em: 24/09/2025 às 08:32:51
+------------------------------
+TOMADA:
+  Status: OK
+  Observações: Nenhuma observação
+
+CABO DE REDE:
+  Status: OK
+  Observações: Nenhuma observação
+
+TV:
+  Status: OK
+  Observações: Nenhuma observação
+
+CÂMERA:
+  Status: OK
+  Observações: Nenhuma observação
+
+
