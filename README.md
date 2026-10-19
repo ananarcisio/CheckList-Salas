@@ -78,9 +78,3 @@ checklist-equipamentos/
 ├── cbm.png                        # Logo da empresa
 └── README.md                      # Documentação
 ```
-
-## 🎨 Screenshots
-[Adicionar screenshots da aplicação]
-
-## 🚀 Demo Online
-[Link para GitHub Pages se disponível]
